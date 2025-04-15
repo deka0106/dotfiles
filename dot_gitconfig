@@ -1,0 +1,27 @@
+[user]
+	name = Ryo Kuramoto
+	email = me@deka.jp
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPG1A4k2qMZAJjXUDqSRRen2RCWB7Ali5wklaaRqdwJu
+[core]
+	editor = cursor --wait
+	ignorecase = false
+	quotepath = false
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[commit]
+	gpgsign = true
+[rebase]
+	autosquash = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

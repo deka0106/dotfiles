@@ -1,0 +1,40 @@
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+BREW_PREFIX="$(brew --prefix)"
+
+# GNU commands
+export PATH="$BREW_PREFIX/opt/curl/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gawk/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-time/libexec/gnubin:$PATH"
+
+# Editor
+export EDITOR="cursor --wait"
+
+# mise
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+# Go
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# aqua
+export AQUA_ROOT_DIR="$HOME/.local/share/aquaproj-aqua"
+export PATH="$PATH:$AQUA_ROOT_DIR/bin"
+
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
+# Google Cloud
+source "$BREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
+source "$BREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
+
+# Toolbox App
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
